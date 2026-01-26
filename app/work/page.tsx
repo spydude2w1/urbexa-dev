@@ -3,6 +3,7 @@
 import type { Metadata } from "next"
 import { useState, useMemo } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Search, ChevronDown } from "lucide-react"
 import project1Img from "@/components/work/project-1.png"
 import proj2 from "@/components/work/project-2.jpg"
@@ -269,10 +270,22 @@ export default function WorkPage() {
 
         {/* Closing Note */}
         <section className="border-t border-border pt-16 md:pt-20">
-          <div className="max-w-2xl animate-settle opacity-0">
+          <div className="max-w-2xl animate-settle opacity-0 mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
               This archive represents selected projects executed under defined scope and delivery frameworks.
             </p>
+          </div>
+          <div className="animate-settle opacity-0 animation-delay-200">
+            <Link
+              href="/contact"
+              className="inline-block text-sm tracking-widest uppercase text-foreground/70 pb-2 transition-all duration-500 hover:text-gold"
+              style={{
+                borderBottom: "1px solid rgba(239, 210, 162, 0.3)",
+              }}
+              data-hoverable
+            >
+              Contact Urbexa Projects
+            </Link>
           </div>
         </section>
       </div>

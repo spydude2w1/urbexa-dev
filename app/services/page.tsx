@@ -2,6 +2,7 @@
 
 import { Metadata } from "next"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function ServicesPage() {
   const [expandedService, setExpandedService] = useState<string | null>(null)
@@ -169,10 +170,22 @@ This service is designed to reduce fragmentation and maintain accountability acr
 
         {/* Closing Statement */}
         <section className="border-t border-border pt-16 md:pt-20">
-          <div className="max-w-2xl animate-settle opacity-0">
+          <div className="max-w-2xl animate-settle opacity-0 mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
               Services are structured to integrate seamlessly, not operate in isolation.
             </p>
+          </div>
+          <div className="animate-settle opacity-0 animation-delay-200">
+            <Link
+              href="/contact"
+              className="inline-block text-sm tracking-widest uppercase text-foreground/70 pb-2 transition-all duration-500 hover:text-gold"
+              style={{
+                borderBottom: "1px solid rgba(239, 210, 162, 0.3)",
+              }}
+              data-hoverable
+            >
+              Request Project Review
+            </Link>
           </div>
         </section>
       </div>

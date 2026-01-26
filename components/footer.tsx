@@ -48,7 +48,7 @@ export function Footer() {
               className="text-sm text-muted-foreground transition-all duration-500 hover:text-gold"
               data-hoverable
             >
-              Get in touch
+              Contact Urbexa Projects
             </Link>
             <Link
               href="/work"

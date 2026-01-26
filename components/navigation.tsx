@@ -121,31 +121,40 @@ export function Navigation() {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-500 ease-out",
-            isMobileMenuOpen ? "max-h-80 pb-6" : "max-h-0"
+            isMobileMenuOpen ? "max-h-96 pb-6" : "max-h-0"
           )}
         >
-          <ul className="flex flex-col gap-4">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={cn(
-                    "block text-sm tracking-wide transition-all duration-300 py-2",
-                    pathname === item.href
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                  style={{
-                    borderLeft: pathname === item.href ? "2px solid var(--gold)" : "2px solid transparent",
-                    paddingLeft: "12px",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Background overlay */}
+          {isMobileMenuOpen && (
+            <div 
+              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+          )}
+          <div className="relative z-50 max-h-80 overflow-y-auto">
+            <ul className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "block text-sm tracking-wide transition-all duration-300 py-2",
+                      pathname === item.href
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                    style={{
+                      borderLeft: pathname === item.href ? "2px solid var(--gold)" : "2px solid transparent",
+                      paddingLeft: "12px",
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

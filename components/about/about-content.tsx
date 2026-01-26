@@ -1,132 +1,165 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
-const sections = [
+const materials = [
   {
-    content:
-      "Urbexa Projects was formed with a clear intent: to bring structure, accountability, and continuity to residential construction. Over time, we observed that most housing projects do not fail due to lack of effort or intent, but due to fragmentation — approvals handled separately, planning disconnected from execution, construction split across multiple vendors, and responsibility diluted at every stage.",
+    id: "structure",
+    title: "Structure",
+    items: [
+      "Steel: JSW Neosteel, Tata Tiscon, Jindal Panther",
+      "Cement: OPC 43 / OPC 53 (UltraTech or ACC)",
+      "Aggregates: 20mm & 40mm stone",
+      "Ready-mix concrete: AVS Ready Mix — M20, M25, or higher if required",
+      "Blocks: AVS Concrete Blocks"
+    ]
   },
   {
-    content:
-      "What should be a controlled, linear process often becomes a series of handovers, assumptions, and compromises. Delays, cost overruns, and uncertainty are usually symptoms of this fragmented approach rather than isolated mistakes.",
+    id: "kitchen-sanitary",
+    title: "Kitchen & Sanitary",
+    items: [
+      "Modular kitchen components",
+      "Granite or quartz countertops",
+      "Sanitary and CP fittings: Jaquar, Cera, Kohler"
+    ]
   },
   {
-    content:
-      "Urbexa Projects was established to address this gap.",
+    id: "doors-windows",
+    title: "Doors & Windows",
+    items: [
+      "Doors: Premium Honne wood from Urbexa's own factory",
+      "Windows: UPVC frame systems or aluminium systems"
+    ]
   },
   {
-    content:
-      "From the outset, our focus has been on managing residential construction as a complete lifecycle rather than a collection of independent services. We operate across approvals, architectural planning, elevation development, civil construction, interiors, and final handover under a single execution framework. This allows scope, timelines, and responsibilities to remain aligned from the beginning of a project through its completion.",
+    id: "painting-finishes",
+    title: "Painting & Finishes",
+    items: [
+      "Primer: Asian Paints TruCare",
+      "Exterior paints: Asian Paints Ace Exterior Emulsion or Apex Ultima"
+    ]
   },
   {
-    content:
-      "Our role is not limited to building structures. We coordinate processes, decisions, and stakeholders so that each stage of work is informed by the next. Planning is developed with regulatory and execution realities in mind. Construction is carried out with clarity on design intent and finishing requirements. Interiors and final works are delivered without disconnect from earlier stages.",
+    id: "flooring",
+    title: "Flooring",
+    items: [
+      "Italian marble flooring",
+      "Full-size tiles",
+      "2×2 vitrified tiles with spacers",
+      "Anti-skid flooring in wet areas"
+    ]
   },
   {
-    content:
-      "By consolidating responsibility, Urbexa Projects reduces dependency on fragmented vendors and minimizes the uncertainty that homeowners typically face during construction. Each engagement is approached with defined scope, documented responsibilities, and a clear understanding of how one phase transitions into the next.",
+    id: "electrical",
+    title: "Electrical",
+    items: [
+      "Wiring: Polycab",
+      "Switches, sockets, distribution boards, MCBs and RCCBs: Legrand"
+    ]
   },
   {
-    content:
-      "Today, Urbexa Projects undertakes residential construction and development work across Bengaluru and select regions of Tamil Nadu. Projects range from execution-only engagements to complete cradle-to-completion delivery, depending on client requirements. Services may be engaged individually or as part of an integrated model, but the underlying principle remains the same: structured delivery, coordinated execution, and long-term accountability.",
-  },
-  {
-    content:
-      "Urbexa Projects continues to operate with the understanding that residential construction is not just about completion, but about responsibility that extends beyond handover. Our work is shaped by the belief that clarity at the start, discipline during execution, and accountability at the end are what ultimately define a successful project.",
-  },
+    id: "plumbing-waterproofing",
+    title: "Plumbing & Waterproofing",
+    items: [
+      "Pipes: Astral, Supreme, Ashirvaad",
+      "Waterproofing systems: Dr. Fixit"
+    ]
+  }
 ]
 
-const visionSection = {
-  title: "Looking Ahead",
-  content:
-    "Our vision extends beyond individual projects. We see a path from disciplined execution to strategic partnerships to development — all built on the foundation of trust and proven capability.",
-}
-
 export function AboutContent() {
-  const [visibleSections, setVisibleSections] = useState<number[]>([])
-  const [visionVisible, setVisionVisible] = useState(false)
-  const sectionsRef = useRef<(HTMLParagraphElement | null)[]>([])
-  const visionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observers = sectionsRef.current.map((ref, index) => {
-      if (!ref) return null
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisibleSections((prev) => [...new Set([...prev, index])])
-          }
-        },
-        { threshold: 0.4 }
-      )
-
-      observer.observe(ref)
-      return observer
-    })
-
-    const visionObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisionVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (visionRef.current) {
-      visionObserver.observe(visionRef.current)
-    }
-
-    return () => {
-      observers.forEach((observer) => observer?.disconnect())
-      visionObserver.disconnect()
-    }
-  }, [])
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null)
 
   return (
-    <div className="space-y-10">
-      {/* Main content paragraphs */}
-      {sections.map((section, index) => (
-        <p
-          key={index}
-          ref={(el) => { sectionsRef.current[index] = el }}
-          className={`text-lg text-muted-foreground leading-relaxed transition-all duration-[1.2s] ${
-            visibleSections.includes(index)
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-          style={{ 
-            transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-            transitionDelay: `${index * 80}ms`
-          }}
-        >
-          {section.content}
-        </p>
-      ))}
+    <div className="space-y-20">
+      {/* Vision Paragraph */}
+      <p className="text-lg text-muted-foreground leading-relaxed animate-settle opacity-0">
+        Urbexa Projects builds residential and select commercial spaces from cradle to completion.<br />
+        Our vision is to eliminate fragmentation in construction by integrating approvals, planning, material specification, execution, and finishing into a single, accountable process.<br />
+        Every project is approached with long-term performance in mind, where design intent, material quality, and execution discipline are aligned from the first decision to final handover.
+      </p>
 
-      {/* Vision section */}
-      <div
-        ref={visionRef}
-        className={`mt-20 pt-16 relative transition-all duration-[1.2s] ${
-          visionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-        style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      >
-        {/* Gradient separator */}
-        <div 
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{
-            background: "linear-gradient(90deg, oklch(0.25 0.005 250) 0%, oklch(0.32 0.005 250) 50%, oklch(0.25 0.005 250) 100%)"
-          }}
-        />
-        <h2 className="font-serif text-2xl font-light text-foreground mb-8">
-          {visionSection.title}
+      {/* Materials & Build Quality Section */}
+      <div className="animate-settle opacity-0 animation-delay-300">
+        <h2 className="font-serif text-2xl md:text-3xl font-light text-foreground mb-6">
+          Materials & Build Quality
         </h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          {visionSection.content}
+        <p className="text-base text-muted-foreground leading-relaxed mb-16 max-w-2xl">
+          A building is only as strong as the materials that shape it. We specify proven, high-grade materials at every layer of construction to ensure durability, safety, and long-term integrity.
         </p>
+
+        {/* Connected Roadmap */}
+        <div className="relative max-w-4xl">
+          {/* Connection Lines */}
+          <svg 
+            className="absolute inset-0 w-full h-full pointer-events-none" 
+            style={{ zIndex: 1 }}
+          >
+            {materials.slice(0, -1).map((_, index) => {
+              const isActive = hoveredNode === materials[index].id || hoveredNode === materials[index + 1].id
+              const startX = index % 2 === 0 ? 384 : 0
+              const endX = (index + 1) % 2 === 0 ? 384 : 0
+              const startY = 32 + index * 192
+              const endY = 32 + (index + 1) * 192
+              const midX = (startX + endX) / 2
+              const midY = (startY + endY) / 2 + 40
+              
+              return (
+                <path
+                  key={index}
+                  d={`M ${startX} ${startY} Q ${midX} ${midY} ${endX} ${endY}`}
+                  stroke={isActive ? "rgba(239, 210, 162, 0.5)" : "rgba(255, 255, 255, 0.15)"}
+                  strokeWidth="2"
+                  fill="none"
+                  className="transition-all duration-500"
+                />
+              )
+            })}
+          </svg>
+
+          {/* Material Nodes */}
+          <div className="relative space-y-12" style={{ zIndex: 2 }}>
+            {materials.map((material, index) => (
+              <div
+                key={material.id}
+                className={`relative animate-settle opacity-0 ${
+                  index % 2 === 0 ? "ml-0" : "ml-auto max-w-md"
+                }`}
+                style={{ animationDelay: `${500 + index * 100}ms` }}
+                onMouseEnter={() => setHoveredNode(material.id)}
+                onMouseLeave={() => setHoveredNode(null)}
+              >
+                <div className={`bg-card border rounded-lg p-6 md:p-8 transition-all duration-500 max-w-md relative ${
+                  hoveredNode === material.id
+                    ? "border-gold/30 shadow-[0_0_20px_rgba(239,210,162,0.1)] transform translate-y-[-2px]"
+                    : hoveredNode && hoveredNode !== material.id
+                    ? "border-border opacity-60"
+                    : "border-border"
+                }`}>
+                  {/* Connection Point */}
+                  <div className={`absolute w-3 h-3 rounded-full transition-all duration-500 ${
+                    index % 2 === 0 ? "-right-1.5" : "-left-1.5"
+                  } top-8 ${
+                    hoveredNode === material.id
+                      ? "bg-gold"
+                      : "bg-border"
+                  }`} />
+                  
+                  <h3 className="font-serif text-lg font-light text-foreground mb-4">
+                    {material.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {material.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="text-sm text-muted-foreground leading-relaxed">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
