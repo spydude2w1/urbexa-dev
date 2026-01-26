@@ -9,7 +9,9 @@ import { cn } from "@/lib/utils"
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "/work", label: "Our Work" },
+  { href: "/approvals", label: "Approvals" },
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -67,14 +69,14 @@ export function Navigation() {
             <div className="relative w-10 h-10 md:w-11 md:h-11">
               <Image
                 src="/images/bk-icon.png"
-                alt="BK Buildworks"
+                alt="Urbexa Projects"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
             <span className="font-serif text-lg md:text-xl tracking-wide text-foreground">
-              Buildworks
+              Urbexa Projects
             </span>
           </Link>
 

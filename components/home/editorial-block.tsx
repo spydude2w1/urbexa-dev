@@ -75,7 +75,7 @@ export function EditorialBlock() {
                 transitionDelay: "0.2s"
               }}
             >
-              BK Buildworks exists to bring clarity to construction — before money 
+              Urbexa Projects exists to bring clarity to construction — before money 
               is committed and mistakes are made.
             </p>
             <p

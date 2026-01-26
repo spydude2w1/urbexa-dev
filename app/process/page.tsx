@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import { ProcessSteps } from "@/components/process/process-steps"
 
 export const metadata: Metadata = {
-  title: "Our Process — BK Buildworks",
-  description: "How BK Buildworks approaches construction projects with clarity, control, and long-term accountability.",
+  title: "Our Process — Urbexa Group",
+  description: "How Urbexa Projects approaches construction projects with clarity, control, and long-term accountability.",
 }
 
 export default function ProcessPage() {

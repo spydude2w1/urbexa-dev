@@ -18,7 +18,7 @@ const _cormorant = Cormorant_Garamond({
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'BK Buildworks — Execution-led Construction',
+  title: 'Urbexa Projects — Execution-led Construction',
   description: 'Execution-led construction with clarity, control, and long-term value. Free resources and structured insight for landowners and serious builders.',
   icons: {
     icon: [
@@ -31,8 +31,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/BK-Favicon.ico',
       },
     ],
   },

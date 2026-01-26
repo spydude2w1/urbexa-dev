@@ -28,13 +28,13 @@ export function Footer() {
               <div className="relative w-10 h-10">
                 <Image
                   src="/images/bk-icon.png"
-                  alt="BK Buildworks"
+                  alt="Urbexa Projects Logo"
                   fill
                   className="object-contain"
                 />
               </div>
               <span className="font-serif text-xl tracking-wide text-foreground">
-                Buildworks
+                Urbexa Projects
               </span>
             </div>
             <p className="text-sm text-muted-foreground/70 max-w-sm leading-relaxed">
@@ -63,7 +63,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-border/20">
           <p className="text-xs text-muted-foreground/40">
-            {new Date().getFullYear()} BK Buildworks. All rights reserved.
+            {new Date().getFullYear()} Urbexa Group. All rights reserved.
           </p>
         </div>
       </div>

@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import { AboutContent } from "@/components/about/about-content"
 
 export const metadata: Metadata = {
-  title: "About — BK Buildworks",
-  description: "Understanding the philosophy behind BK Buildworks and our approach to construction in India.",
+  title: "About — Urbexa Group",
+  description: "Understanding the philosophy behind Urbexa Projects and our approach to construction in India.",
 }
 
 export default function AboutPage() {

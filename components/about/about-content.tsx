@@ -5,19 +5,35 @@ import { useEffect, useRef, useState } from "react"
 const sections = [
   {
     content:
-      "Construction in India is chaotic. Timelines slip, budgets balloon, and too many projects begin without the clarity they need to succeed.",
+      "Urbexa Projects was formed with a clear intent: to bring structure, accountability, and continuity to residential construction. Over time, we observed that most housing projects do not fail due to lack of effort or intent, but due to fragmentation — approvals handled separately, planning disconnected from execution, construction split across multiple vendors, and responsibility diluted at every stage.",
   },
   {
     content:
-      "Most problems don't start on the construction site — they start before work begins. Poor planning, unclear agreements, and misaligned expectations set the foundation for failure.",
+      "What should be a controlled, linear process often becomes a series of handovers, assumptions, and compromises. Delays, cost overruns, and uncertainty are usually symptoms of this fragmented approach rather than isolated mistakes.",
   },
   {
     content:
-      "BK Buildworks exists to change this. We focus on bringing clarity, structure, and calm execution to construction projects that matter.",
+      "Urbexa Projects was established to address this gap.",
   },
   {
     content:
-      "Our approach is simple: understand before we act, document before we build, and communicate before problems arise. This discipline creates predictability in an industry known for surprises.",
+      "From the outset, our focus has been on managing residential construction as a complete lifecycle rather than a collection of independent services. We operate across approvals, architectural planning, elevation development, civil construction, interiors, and final handover under a single execution framework. This allows scope, timelines, and responsibilities to remain aligned from the beginning of a project through its completion.",
+  },
+  {
+    content:
+      "Our role is not limited to building structures. We coordinate processes, decisions, and stakeholders so that each stage of work is informed by the next. Planning is developed with regulatory and execution realities in mind. Construction is carried out with clarity on design intent and finishing requirements. Interiors and final works are delivered without disconnect from earlier stages.",
+  },
+  {
+    content:
+      "By consolidating responsibility, Urbexa Projects reduces dependency on fragmented vendors and minimizes the uncertainty that homeowners typically face during construction. Each engagement is approached with defined scope, documented responsibilities, and a clear understanding of how one phase transitions into the next.",
+  },
+  {
+    content:
+      "Today, Urbexa Projects undertakes residential construction and development work across Bengaluru and select regions of Tamil Nadu. Projects range from execution-only engagements to complete cradle-to-completion delivery, depending on client requirements. Services may be engaged individually or as part of an integrated model, but the underlying principle remains the same: structured delivery, coordinated execution, and long-term accountability.",
+  },
+  {
+    content:
+      "Urbexa Projects continues to operate with the understanding that residential construction is not just about completion, but about responsibility that extends beyond handover. Our work is shaped by the belief that clarity at the start, discipline during execution, and accountability at the end are what ultimately define a successful project.",
   },
 ]
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { Mail, MessageCircle } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contact — BK Buildworks",
-  description: "Get in touch with BK Buildworks for serious construction projects.",
+  title: "Contact — Urbexa Group",
+  description: "Get in touch with Urbexa Projects for serious construction projects.",
 }
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <div className="space-y-6 opacity-0 animate-settle animation-delay-200">
           {/* Email */}
           <a
-            href="mailto:contact@bkbuilders.in"
+            href="mailto:enquire@urbexagroup.com"
             className="group relative flex items-center gap-6 p-6 md:p-8 overflow-hidden transition-all duration-700 ease-out"
             style={{
               background: "linear-gradient(135deg, oklch(0.16 0.005 250) 0%, oklch(0.18 0.005 250) 100%)",
@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
             <div className="relative">
               <p className="text-sm text-muted-foreground/70 mb-1">Email</p>
-              <p className="text-lg text-foreground">contact@bkbuilders.in</p>
+              <p className="text-lg text-foreground">enquire@urbexagroup.com</p>
             </div>
           </a>
 
