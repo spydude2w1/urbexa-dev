@@ -14,7 +14,7 @@ export default function ApprovalsPage() {
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-foreground animate-settle opacity-0 mb-6">
             Approvals
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-2xl animate-settle opacity-0 animation-delay-200">
+          <p className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed max-w-2xl animate-settle opacity-0 animation-delay-200">
             Statutory approvals handled within defined regulatory scope.
           </p>
         </header>
@@ -22,10 +22,10 @@ export default function ApprovalsPage() {
         {/* Introductory Context */}
         <section className="mb-20 md:mb-24">
           <div className="max-w-3xl animate-settle opacity-0 animation-delay-300">
-            <p className="text-base text-foreground/90 leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               Urbexa Group provides approval support for residential and development projects where regulatory clearances are required as part of execution.
             </p>
-            <p className="text-base text-foreground/90 leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Our involvement is structured, region-specific, and limited to clearly defined statutory processes. We currently assist with approvals in Bengaluru and select regions of Tamil Nadu.
             </p>
           </div>
@@ -92,10 +92,10 @@ export default function ApprovalsPage() {
               Scope of Approval Support
             </h2>
             <div className="animate-settle opacity-0 animation-delay-1300">
-              <p className="text-base text-foreground/90 leading-relaxed mb-6">
+              <p className="text-base text-muted-foreground leading-relaxed mb-6">
                 Approval assistance is provided as part of a defined scope aligned with project requirements. This includes coordination, documentation support, and procedural follow-up where applicable.
               </p>
-              <p className="text-base text-foreground/90 leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 Approval timelines and outcomes remain subject to statutory authority processes and regulations.
               </p>
             </div>
