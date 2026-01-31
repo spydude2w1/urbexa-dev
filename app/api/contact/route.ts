@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       phone: String(formData.phone || '').trim()
     }
 
-    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'shivambiswal01@gmail.com'
+    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || 'noreply@urbexaprojects.com'
 
     // Email subject
     const subject = `${sanitizedData.fullName} @ Urbexa Projects | New Project Enquiry — ${sanitizedData.service} | ${sanitizedData.location}`
@@ -62,7 +62,7 @@ This enquiry was submitted through the Urbexa Projects website.
 
     // Send internal email to Urbexa
     await resend.emails.send({
-      from: 'Urbexa Projects <onboarding@resend.dev>',
+      from: 'Urbexa Projects <noreply@urbexaprojects.com>',
       to: [receiverEmail],
       subject: subject,
       text: emailBody,
@@ -77,7 +77,7 @@ Best regards,
 Development Team | Urbexa Projects`
 
     await resend.emails.send({
-      from: 'Urbexa Projects <onboarding@resend.dev>',
+      from: 'Urbexa Projects <noreply@urbexaprojects.com>',
       to: [sanitizedData.email],
       subject: 'Project Details Received — Urbexa Projects',
       text: acknowledgementBody,
