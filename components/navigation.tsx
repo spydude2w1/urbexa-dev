@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -12,7 +12,6 @@ const navItems = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Our Work" },
   { href: "/approvals", label: "Approvals" },
-  // { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ]
@@ -21,39 +20,55 @@ export function Navigation() {
   const pathname = usePathname()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const rafRef = useRef<number>()
 
   useEffect(() => {
     const handleScroll = () => {
-      // Smooth progress from 0 to 1 over first 100px of scroll
-      const progress = Math.min(1, window.scrollY / 100)
-      setScrollProgress(progress)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      
+      rafRef.current = requestAnimationFrame(() => {
+        const progress = Math.min(1, window.scrollY / 120)
+        setScrollProgress(progress)
+      })
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
   }, [])
+
+  const glassStyle = {
+    background: `linear-gradient(180deg, 
+      rgba(15, 15, 17, ${0.35 + scrollProgress * 0.15}) 0%, 
+      rgba(12, 12, 14, ${0.6 + scrollProgress * 0.1}) 100%)`,
+    backdropFilter: `blur(${4 + scrollProgress * 6}px) saturate(${90 + scrollProgress * 20}%) brightness(${0.85 - scrollProgress * 0.1})`,
+    WebkitBackdropFilter: `blur(${4 + scrollProgress * 6}px) saturate(${90 + scrollProgress * 20}%) brightness(${0.85 - scrollProgress * 0.1})`,
+    borderBottom: scrollProgress > 0.1 
+      ? `1px solid rgba(255, 255, 255, ${0.08 + scrollProgress * 0.04})` 
+      : "1px solid rgba(255, 255, 255, 0.04)",
+    boxShadow: scrollProgress > 0.2 
+      ? `0 1px 0 0 rgba(255, 255, 255, 0.03) inset, 0 1px 20px -6px rgba(0, 0, 0, ${0.2 + scrollProgress * 0.1})` 
+      : "0 1px 0 0 rgba(255, 255, 255, 0.02) inset",
+    transform: `scale(${1.002 + scrollProgress * 0.008})`,
+    transformOrigin: "top center",
+  }
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{
-        // Apple-like glass effect with smooth transition
-        background: `linear-gradient(180deg, 
-          rgba(20, 20, 22, ${0.6 + scrollProgress * 0.35}) 0%, 
-          rgba(20, 20, 22, ${0.4 + scrollProgress * 0.5}) 100%)`,
-        backdropFilter: `blur(${scrollProgress * 20}px) saturate(${100 + scrollProgress * 80}%)`,
-        WebkitBackdropFilter: `blur(${scrollProgress * 20}px) saturate(${100 + scrollProgress * 80}%)`,
-        borderBottom: scrollProgress > 0.1 
-          ? `1px solid rgba(239, 210, 162, ${scrollProgress * 0.15})` 
-          : "1px solid transparent",
-        transition: "border-color 0.5s ease-out",
-      }}
+      style={glassStyle}
     >
-      {/* Subtle noise texture overlay */}
+      {/* Glass refraction gradient */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          opacity: scrollProgress * 0.3,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
+          background: `linear-gradient(180deg, 
+            rgba(255, 255, 255, ${0.015 + scrollProgress * 0.01}) 0%, 
+            transparent 30%, 
+            rgba(0, 0, 0, ${0.05 + scrollProgress * 0.02}) 100%)`,
+          opacity: 0.4 + scrollProgress * 0.2,
         }}
       />
       
@@ -64,8 +79,10 @@ export function Navigation() {
             href="/"
             className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80"
             data-hoverable
+            style={{
+              textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+            }}
           >
-            {/* BK Icon */}
             <div className="relative w-10 h-10 md:w-11 md:h-11">
               <Image
                 src="/images/bk-icon.png"
@@ -73,6 +90,9 @@ export function Navigation() {
                 fill
                 className="object-contain"
                 priority
+                style={{
+                  filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
+                }}
               />
             </div>
             <span className="font-serif text-lg md:text-xl tracking-wide text-foreground">
@@ -93,12 +113,18 @@ export function Navigation() {
                       : "text-muted-foreground hover:text-foreground"
                   )}
                   data-hoverable
+                  style={{
+                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+                  }}
                 >
                   {item.label}
                   {pathname === item.href && (
                     <span 
                       className="absolute -bottom-1 left-0 right-0 h-px"
-                      style={{ backgroundColor: "var(--gold)" }}
+                      style={{ 
+                        backgroundColor: "var(--gold)",
+                        boxShadow: "0 0 4px rgba(239, 210, 162, 0.3)",
+                      }}
                     />
                   )}
                 </Link>
@@ -112,6 +138,9 @@ export function Navigation() {
             className="md:hidden p-2 text-foreground transition-opacity duration-300 hover:opacity-70"
             aria-label="Toggle menu"
             data-hoverable
+            style={{
+              filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
+            }}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -124,7 +153,6 @@ export function Navigation() {
             isMobileMenuOpen ? "max-h-96 pb-6" : "max-h-0"
           )}
         >
-          {/* Background overlay */}
           {isMobileMenuOpen && (
             <div 
               className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
@@ -147,6 +175,7 @@ export function Navigation() {
                     style={{
                       borderLeft: pathname === item.href ? "2px solid var(--gold)" : "2px solid transparent",
                       paddingLeft: "12px",
+                      textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
                     }}
                   >
                     {item.label}
