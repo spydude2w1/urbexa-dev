@@ -151,7 +151,10 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <a
                 href="mailto:enquire@urbexagroup.in"
-                className="flex flex-col transition-colors duration-300 hover:text-gold"
+                className="flex flex-col hover:text-gold"
+                style={{
+                  transition: "color var(--motion-duration-normal) var(--motion-ease-out)"
+                }}
               >
                 <span className="text-sm text-muted-foreground mb-1">Email</span>
                 <span className="text-base text-foreground">enquire@urbexagroup.in</span>
@@ -160,7 +163,10 @@ export default function ContactPage() {
                 href="https://wa.me/919945356557"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col transition-colors duration-300 hover:text-gold"
+                className="flex flex-col hover:text-gold"
+                style={{
+                  transition: "color var(--motion-duration-normal) var(--motion-ease-out)"
+                }}
               >
                 <span className="text-sm text-muted-foreground mb-1">Phone / WhatsApp</span>
                 <span className="text-base text-foreground">+91 9945356557</span>
@@ -211,11 +217,14 @@ export default function ContactPage() {
                       onChange={(e) => updateFormData('service', e.target.value)}
                       className="sr-only"
                     />
-                    <div className={`p-4 border rounded-lg transition-all duration-300 ${
+                    <div className={`p-4 border rounded-lg ${
                       formData.service === service 
                         ? 'border-gold bg-gold/5' 
                         : 'border-border hover:border-gold/30'
-                    }`}>
+                    }`}
+                    style={{
+                      transition: "border-color var(--motion-duration-normal) var(--motion-ease-out), background-color var(--motion-duration-normal) var(--motion-ease-out)"
+                    }}>
                       <span className="text-sm text-foreground">{service}</span>
                     </div>
                   </label>

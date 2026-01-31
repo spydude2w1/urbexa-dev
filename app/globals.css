@@ -50,6 +50,15 @@
   --sidebar-accent-foreground: oklch(0.85 0.01 90);
   --sidebar-border: oklch(0.25 0.005 250);
   --sidebar-ring: oklch(0.55 0.06 75);
+  
+  /* Unified Motion System */
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-duration-fast: 200ms;
+  --motion-duration-normal: 400ms;
+  --motion-duration-slow: 700ms;
+  --motion-duration-settle: 1000ms;
 }
 
 @theme inline {
@@ -118,56 +127,25 @@
       cursor: none;
     }
   }
-}
-
-/* Apple-like smooth animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  
+  /* Unified interaction states */
+  a, button, [data-hoverable] {
+    transition: opacity var(--motion-duration-fast) var(--motion-ease-out),
+                transform var(--motion-duration-fast) var(--motion-ease-out),
+                color var(--motion-duration-normal) var(--motion-ease-out);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  /* Prevent layout shifts */
+  img {
+    font-size: 0;
   }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animation-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animation-delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animation-delay-500 {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-600 {
-  animation-delay: 0.6s;
-}
-
-/* Section settle animation */
+/* Unified Motion System */
 @keyframes settle {
   0% {
     opacity: 0;
-    transform: translateY(40px);
-  }
-  60% {
-    transform: translateY(-4px);
+    transform: translateY(24px);
   }
   100% {
     opacity: 1;
@@ -176,7 +154,25 @@
 }
 
 .animate-settle {
-  animation: settle 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: settle var(--motion-duration-settle) var(--motion-ease) forwards;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+.animation-delay-700 { animation-delay: 700ms; }
+
+/* Interaction refinements */
+.hover-lift {
+  transition: transform var(--motion-duration-normal) var(--motion-ease-out),
+              box-shadow var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-1px);
 }
 
 /* Gradient section backgrounds */

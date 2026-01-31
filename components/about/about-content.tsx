@@ -111,7 +111,9 @@ export function AboutContent() {
                   stroke={isActive ? "rgba(239, 210, 162, 0.5)" : "rgba(255, 255, 255, 0.15)"}
                   strokeWidth="2"
                   fill="none"
-                  className="transition-all duration-500"
+                  style={{
+                    transition: "stroke var(--motion-duration-normal) var(--motion-ease-out)"
+                  }}
                 />
               )
             })}
@@ -125,25 +127,31 @@ export function AboutContent() {
                 className={`relative animate-settle opacity-0 ${
                   index % 2 === 0 ? "ml-0" : "ml-auto max-w-md"
                 }`}
-                style={{ animationDelay: `${500 + index * 100}ms` }}
+                style={{ 
+                  animationDelay: `${500 + index * 100}ms`,
+                  transition: "opacity var(--motion-duration-normal) var(--motion-ease-out), border-color var(--motion-duration-normal) var(--motion-ease-out), box-shadow var(--motion-duration-normal) var(--motion-ease-out)"
+                }}
                 onMouseEnter={() => setHoveredNode(material.id)}
                 onMouseLeave={() => setHoveredNode(null)}
               >
-                <div className={`bg-card border rounded-lg p-6 md:p-8 transition-all duration-500 max-w-md relative ${
+                <div className={`bg-card border rounded-lg p-6 md:p-8 max-w-md relative hover-lift ${
                   hoveredNode === material.id
-                    ? "border-gold/30 shadow-[0_0_20px_rgba(239,210,162,0.1)] transform translate-y-[-2px]"
+                    ? "border-gold/30 shadow-[0_0_20px_rgba(239,210,162,0.1)]"
                     : hoveredNode && hoveredNode !== material.id
                     ? "border-border opacity-60"
                     : "border-border"
                 }`}>
                   {/* Connection Point */}
-                  <div className={`absolute w-3 h-3 rounded-full transition-all duration-500 ${
+                  <div className={`absolute w-3 h-3 rounded-full ${
                     index % 2 === 0 ? "-right-1.5" : "-left-1.5"
                   } top-8 ${
                     hoveredNode === material.id
                       ? "bg-gold"
                       : "bg-border"
-                  }`} />
+                  }`} 
+                  style={{
+                    transition: "background-color var(--motion-duration-normal) var(--motion-ease-out)"
+                  }} />
                   
                   <h3 className="font-serif text-lg font-light text-foreground mb-4">
                     {material.title}

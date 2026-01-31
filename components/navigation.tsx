@@ -81,6 +81,7 @@ export function Navigation() {
             data-hoverable
             style={{
               textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+              transition: "opacity var(--motion-duration-fast) var(--motion-ease-out)"
             }}
           >
             <div className="relative w-10 h-10 md:w-11 md:h-11">
@@ -115,6 +116,7 @@ export function Navigation() {
                   data-hoverable
                   style={{
                     textShadow: "0 1px 2px rgba(0, 0, 0, 0.1)",
+                    transition: "color var(--motion-duration-normal) var(--motion-ease-out)"
                   }}
                 >
                   {item.label}
@@ -140,6 +142,7 @@ export function Navigation() {
             data-hoverable
             style={{
               filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
+              transition: "opacity var(--motion-duration-fast) var(--motion-ease-out)"
             }}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -149,9 +152,12 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden overflow-hidden transition-all duration-500 ease-out",
+            "md:hidden overflow-hidden",
             isMobileMenuOpen ? "max-h-96 pb-6" : "max-h-0"
           )}
+          style={{
+            transition: "max-height var(--motion-duration-slow) var(--motion-ease), padding var(--motion-duration-slow) var(--motion-ease)"
+          }}
         >
           {isMobileMenuOpen && (
             <div 
