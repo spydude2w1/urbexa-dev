@@ -117,7 +117,7 @@ export function HeroSection() {
           }}
         >
           <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto mb-14">
-            From statutory approvals and planning to construction, interiors, and final handover.
+            From approvals and planning to construction, interiors, and final handover.
           </p>
         </div>
 

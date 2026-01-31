@@ -16,9 +16,9 @@ const projects = [
     id: 1,
     name: "Private Residence",
     type: "Residential",
-    status: "Completed",
+    status: "Ongoing",
     location: "Bengaluru",
-    completionYear: 2024,
+    completionYear: 2026,
     image: project1Img,
     description: "Ground-up residential construction with integrated approvals and design",
     services: ["Approvals", "Planning & Design", "Residential Construction", "Interiors"]
@@ -34,39 +34,39 @@ const projects = [
     description: "Renovation and extension with elevation development",
     services: ["Planning & Design", "Front Elevation Development", "Residential Construction"]
   },
-  {
-    id: 3,
-    name: "Family Compound",
-    type: "Residential",
-    status: "Completed",
-    location: "Bengaluru",
-    completionYear: 2023,
-    image: proj3,
-    description: "Multi-structure residential development",
-    services: ["Cradle-to-Completion House Development"]
-  },
-  {
-    id: 4,
-    name: "Urban Townhouse",
-    type: "Residential",
-    status: "Completed",
-    location: "Bengaluru",
-    completionYear: 2023,
-    image: proj4,
-    description: "Complete residential renovation with regulatory compliance",
-    services: ["Approvals", "Residential Construction", "Interiors"]
-  },
-  {
-    id: 5,
-    name: "Hillside Villa",
-    type: "Residential",
-    status: "Ongoing",
-    location: "Tamil Nadu",
-    completionYear: 2024,
-    image: proj5,
-    description: "Ground-up construction with elevation and interior coordination",
-    services: ["Planning & Design", "Front Elevation Development", "Residential Construction", "Interiors"]
-  },
+  // {
+  //   id: 3,
+  //   name: "Family Compound",
+  //   type: "Residential",
+  //   status: "Completed",
+  //   location: "Bengaluru",
+  //   completionYear: 2023,
+  //   image: proj3,
+  //   description: "Multi-structure residential development",
+  //   services: ["Cradle-to-Completion House Development"]
+  // },
+  // {
+  //   id: 4,
+  //   name: "Urban Townhouse",
+  //   type: "Residential",
+  //   status: "Completed",
+  //   location: "Bengaluru",
+  //   completionYear: 2023,
+  //   image: proj4,
+  //   description: "Complete residential renovation with regulatory compliance",
+  //   services: ["Approvals", "Residential Construction", "Interiors"]
+  // },
+  // {
+  //   id: 5,
+  //   name: "Hillside Villa",
+  //   type: "Residential",
+  //   status: "Ongoing",
+  //   location: "Tamil Nadu",
+  //   completionYear: 2024,
+  //   image: proj5,
+  //   description: "Ground-up construction with elevation and interior coordination",
+  //   services: ["Planning & Design", "Front Elevation Development", "Residential Construction", "Interiors"]
+  // },
 ]
 
 export default function WorkPage() {
