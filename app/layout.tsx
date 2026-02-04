@@ -8,6 +8,7 @@ import { Footer } from '@/components/footer'
 import { CustomCursor } from '@/components/custom-cursor'
 import { MeshBackground } from '@/components/mesh-background'
 import { NoiseTexture } from '@/components/noise-texture'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const _inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const _cormorant = Cormorant_Garamond({ 
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Navigation />
         <main className="relative z-10">{children}</main>
         <Footer />
+        <SpeedInsights/>
         <Analytics />
       </body>
     </html>
