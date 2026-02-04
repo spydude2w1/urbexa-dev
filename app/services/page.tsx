@@ -11,80 +11,95 @@ export default function ServicesPage() {
     {
       id: "approvals",
       title: "Approvals & Regulatory",
-      summary: "Statutory approval support aligned with project scope",
-      content: `Approval support aligned with statutory requirements and defined project scope.
+      summary: "BBMP, BDA, and DTCP approval support aligned with project scope",
+      content: `Statutory approval support for residential construction projects in Bengaluru and Tamil Nadu regions.
 
 Includes coordination and procedural support for:
-• BBMP
-• BDA
-• BMRDA
-• DTCP
-• HNTDA
+• BBMP plan approval and sanction processes
+• BDA plan sanction for residential developments
+• DTCP approval procedures in Tamil Nadu
+• HNTDA coordination for Hosur region projects
+• B Katha to A Katha conversion support
+• Property title verification assistance
 
-Approval timelines and outcomes remain subject to statutory authority processes.`
+Approval timelines and outcomes remain subject to statutory authority processes and site-specific conditions.`
     },
     {
       id: "planning",
       title: "Architectural Planning & Design",
-      summary: "Planning and design aligned with site constraints",
-      content: `Planning and architectural development aligned with site constraints, regulatory conditions, and execution feasibility.
+      summary: "Vastu-compliant planning aligned with site constraints and regulations",
+      content: `Architectural planning and design development for independent house construction, aligned with site constraints, regulatory conditions, and execution feasibility.
 
 Scope includes:
-• Floor planning
-• Layout optimization
-• Regulatory-compliant drawings
-• Coordination between design intent and construction realities`
+• Floor planning and layout optimization
+• Vastu-compliant design integration
+• Regulatory-compliant working drawings
+• Structural coordination and planning
+• Site analysis and constraint mapping
+• Design-to-construction coordination
+
+Planning integrates approval requirements with construction realities to reduce execution conflicts.`
     },
     {
       id: "elevation",
       title: "Front Elevation Development",
-      summary: "Elevation and façade development focused on proportion",
-      content: `Elevation and façade development focused on proportion, materiality, and long-term relevance rather than trends.
+      summary: "Contemporary elevation design focused on proportion and context",
+      content: `Elevation and façade development for luxury villa construction and independent houses, focused on proportion, materiality, and long-term architectural relevance.
 
 Scope includes:
-• Elevation concepts
-• Massing studies
-• Material strategy
-• Context-sensitive façade development`
+• Contemporary elevation concepts
+• Massing and proportion studies
+• Material strategy and specification
+• Context-sensitive façade development
+• Integration with structural requirements
+
+Elevation development prioritizes timeless design over trending aesthetics.`
     },
     {
       id: "residential",
       title: "Residential Construction",
-      summary: "Structured execution of independent residential buildings",
-      content: `Execution of independent residential buildings under a structured construction framework.
+      summary: "Independent house builders specializing in quality execution",
+      content: `Structured execution of independent house construction and residential buildings under comprehensive quality control frameworks.
 
 Scope includes:
 • Civil and structural execution
-• Trade coordination
-• Quality control
-• Timeline and scope monitoring`
+• Trade coordination and supervision
+• Material quality control and specification
+• Construction timeline monitoring
+• Site safety and compliance management
+• Progress documentation and reporting
+
+Construction approach emphasizes material quality and execution discipline over cost reduction.`
     },
     {
       id: "commercial",
       title: "Commercial Construction",
-      summary: "Small to mid-scale commercial building execution",
-      content: `Execution of small to mid-scale commercial buildings with defined scope and coordination requirements.
+      summary: "Small to mid-scale commercial building execution with residential standards",
+      content: `Execution of small to mid-scale commercial buildings with defined scope and coordination requirements, applying residential construction quality standards.
 
 Suitable for:
-• Office buildings
-• Mixed-use structures
-• Support infrastructure linked to residential developments`
+• Office buildings and professional spaces
+• Mixed-use residential-commercial structures
+• Support infrastructure for residential developments
+• Institutional and utility buildings
+
+Commercial projects maintain the same quality and coordination approach as residential work.`
     },
     {
       id: "cradle",
-      title: "Cradle-to-Completion House Development",
-      summary: "Complete residential delivery under single framework",
-      content: `Complete residential delivery managed under a single execution framework.
+      title: "Turnkey House Construction",
+      summary: "Complete residential delivery under single accountability framework",
+      content: `Complete turnkey house construction managed under a single execution framework, eliminating fragmentation across project stages.
 
 Includes:
-• Statutory approvals
-• Architectural planning and design
-• Civil construction
-• Front elevation development
-• Interior execution
-• Final handover coordination
+• Statutory approvals and regulatory coordination
+• Architectural planning and design development
+• Civil construction and structural execution
+• Front elevation and façade development
+• Interior execution and finishing works
+• Final handover and documentation
 
-This service is designed to reduce fragmentation and maintain accountability across all stages.`
+This integrated approach reduces vendor coordination gaps and maintains single-point accountability from concept to completion.`
     }
   ]
 
@@ -109,10 +124,10 @@ This service is designed to reduce fragmentation and maintain accountability acr
         <section className="mb-32 md:mb-40">
           <div className="max-w-3xl animate-settle opacity-0 animation-delay-300">
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Urbexa Projects provides clearly defined services across approvals, planning, construction, and complete residential delivery.
+              Urbexa Projects provides clearly defined construction services across approvals, planning, and execution for residential projects in Bengaluru and select Tamil Nadu regions.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Each service can operate independently or as part of an integrated cradle-to-completion framework.
+              Each service can operate independently or as part of an integrated turnkey construction framework, maintaining quality standards and execution discipline throughout.
             </p>
           </div>
         </section>
@@ -151,6 +166,83 @@ This service is designed to reduce fragmentation and maintain accountability acr
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Why Our Approach Is Different */}
+        <section className="mb-32 md:mb-40">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground mb-16 animate-settle opacity-0">
+              Why Our Approach Is Different
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+              <div className="animate-settle opacity-0 animation-delay-200">
+                <h3 className="font-serif text-xl font-light text-foreground mb-6">Limited Concurrent Projects</h3>
+                <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                  We intentionally limit the number of projects handled simultaneously to ensure direct oversight and quality control at each site.
+                </p>
+                <h3 className="font-serif text-xl font-light text-foreground mb-6">Market-Aligned Pricing</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Construction costs reflect actual material quality and execution standards rather than artificially reduced per-square-foot pricing that compromises scope or quality.
+                </p>
+              </div>
+              <div className="animate-settle opacity-0 animation-delay-300">
+                <h3 className="font-serif text-xl font-light text-foreground mb-6">Transparent Scope Definition</h3>
+                <p className="text-base text-muted-foreground leading-relaxed mb-6">
+                  Project scope is defined clearly upfront, avoiding hidden exclusions or scope changes that emerge during execution.
+                </p>
+                <h3 className="font-serif text-xl font-light text-foreground mb-6">Quality Materials as Standard</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Material specifications prioritize proven, high-grade options as the baseline rather than offering quality as an upgrade.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Embedded FAQ Section */}
+        <section className="mb-32 md:mb-40">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground mb-16 animate-settle opacity-0">
+              Common Questions
+            </h2>
+            <div className="space-y-4">
+              <div className="bg-card border border-border rounded-lg p-6 md:p-8 animate-settle opacity-0 animation-delay-200">
+                <h3 className="font-serif text-lg font-light text-foreground mb-4">
+                  Why does Urbexa limit concurrent projects?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We intentionally limit project volume to ensure direct oversight, consistent quality control, and immediate response to site decisions across all active construction sites.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-lg p-6 md:p-8 animate-settle opacity-0 animation-delay-300">
+                <h3 className="font-serif text-lg font-light text-foreground mb-4">
+                  How are construction costs determined?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Pricing reflects actual material specifications, supervision standards, and comprehensive scope without hidden exclusions or artificially reduced per-square-foot rates.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-lg p-6 md:p-8 animate-settle opacity-0 animation-delay-400">
+                <h3 className="font-serif text-lg font-light text-foreground mb-4">
+                  What makes turnkey construction different?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Integrated delivery eliminates vendor fragmentation by coordinating approvals, planning, construction, and finishing under single accountability rather than separate contracts.
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 animate-settle opacity-0 animation-delay-500">
+              <a
+                href="/faq"
+                className="text-sm text-gold hover:text-gold/80"
+                style={{
+                  transition: "color var(--motion-duration-normal) var(--motion-ease-out)"
+                }}
+              >
+                View all questions →
+              </a>
+            </div>
           </div>
         </section>
 

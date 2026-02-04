@@ -80,8 +80,11 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Residential construction involves multiple stages, authorities, consultants, and trades. When handled in isolation, this fragmentation creates delays, cost overruns, and accountability gaps.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Urbexa Projects operates as a single execution entity, managing the complete lifecycle of residential construction — from initial approvals through final handover.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Our house construction approach in Bengaluru and select Tamil Nadu regions focuses on coordinated execution, where planning, approvals, material specification, and construction work as one integrated process rather than separate vendor relationships.
             </p>
           </div>
         </div>
