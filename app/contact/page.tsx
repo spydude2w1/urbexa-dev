@@ -150,14 +150,14 @@ export default function ContactPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <a
-                href="mailto:enquire@urbexagroup.in"
+                href="mailto:enquiry@urbexaprojects.com"
                 className="flex flex-col hover:text-gold"
                 style={{
                   transition: "color var(--motion-duration-normal) var(--motion-ease-out)"
                 }}
               >
                 <span className="text-sm text-muted-foreground mb-1">Email</span>
-                <span className="text-base text-foreground">enquire@urbexagroup.in</span>
+                <span className="text-base text-foreground">enquiry@urbexaprojects.com</span>
               </a>
               <a
                 href="https://wa.me/919945356557"
