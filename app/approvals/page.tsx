@@ -23,7 +23,7 @@ export default function ApprovalsPage() {
         <section className="mb-20 md:mb-24">
           <div className="max-w-3xl animate-settle opacity-0 animation-delay-300">
             <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Urbexa Projects provides BBMP plan approval, BDA plan sanction, and DTCP approval support for residential construction projects where regulatory clearances are required as part of execution.
+              Urbexa Projects provides HNDTA Approvals, BBMP plan approval, BDA plan sanction, and DTCP approval support for residential construction projects where regulatory clearances are required as part of execution.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
               Our involvement is structured, region-specific, and limited to clearly defined statutory processes. We currently assist with approvals in Bengaluru and select regions of Tamil Nadu including Hosur.
