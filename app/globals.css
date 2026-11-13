@@ -1,56 +1,54 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '../styles/immersive.css';
 
 @custom-variant dark (&:is(.dark *));
 
-/* Urbexa Projects - Dark Architectural Theme */
+/* Shared charcoal surfaces and gold accents */
 :root {
-  /* Charcoal black background */
-  --background: oklch(0.12 0.005 250);
-  /* Soft off-white text */
-  --foreground: oklch(0.92 0.01 90);
-  /* Warm graphite card */
-  --card: oklch(0.16 0.005 250);
-  --card-foreground: oklch(0.92 0.01 90);
-  --popover: oklch(0.14 0.005 250);
-  --popover-foreground: oklch(0.92 0.01 90);
-  /* Primary - soft off-white */
-  --primary: oklch(0.88 0.01 90);
-  --primary-foreground: oklch(0.12 0.005 250);
-  /* Secondary - concrete grey */
-  --secondary: oklch(0.22 0.005 250);
-  --secondary-foreground: oklch(0.85 0.01 90);
-  /* Muted - warm graphite */
-  --muted: oklch(0.20 0.005 250);
-  --muted-foreground: oklch(0.60 0.01 90);
-  /* Accent - warm luxury gold #EFD2A2 */
-  --accent: oklch(0.87 0.065 85);
-  --accent-foreground: oklch(0.12 0.005 250);
-  /* Gold accent system */
-  --gold: #EFD2A2;
-  --gold-dark: #C9A46D;
-  --gold-light: #F6E4C6;
-  --destructive: oklch(0.50 0.15 25);
-  --destructive-foreground: oklch(0.92 0.01 90);
-  /* Border - subtle warm grey */
-  --border: oklch(0.25 0.005 250);
-  --input: oklch(0.20 0.005 250);
-  --ring: oklch(0.55 0.06 75);
-  --chart-1: oklch(0.55 0.06 75);
-  --chart-2: oklch(0.50 0.04 250);
-  --chart-3: oklch(0.45 0.03 250);
-  --chart-4: oklch(0.60 0.05 75);
-  --chart-5: oklch(0.40 0.02 250);
+  color-scheme: dark;
+  --charcoal-deep: #0d0d0d;
+  --background: #121212;
+  --card: #191919;
+  --secondary: #222222;
+  --raised: #2a2a2a;
+  --foreground: #f1eee7;
+  --muted-foreground: #bdb8af;
+  --gold: #d2ad67;
+  --gold-dark: #a88748;
+  --gold-light: #efd49b;
+  --gold-wash: #292319;
+  --architecture-image-filter: grayscale(1) sepia(0.28);
+  --border: #3b3831;
+  --input: var(--secondary);
+  --ring: var(--gold);
+  --muted: var(--secondary);
+  --popover: var(--card);
+  --card-foreground: var(--foreground);
+  --popover-foreground: var(--foreground);
+  --secondary-foreground: var(--foreground);
+  --primary: var(--gold);
+  --primary-foreground: var(--background);
+  --accent: var(--gold);
+  --accent-foreground: var(--background);
+  --destructive: var(--gold-light);
+  --destructive-foreground: var(--background);
+  --chart-1: var(--gold);
+  --chart-2: var(--gold-light);
+  --chart-3: var(--gold-dark);
+  --chart-4: var(--muted-foreground);
+  --chart-5: var(--raised);
   --radius: 0.25rem;
-  --sidebar: oklch(0.14 0.005 250);
-  --sidebar-foreground: oklch(0.92 0.01 90);
-  --sidebar-primary: oklch(0.88 0.01 90);
-  --sidebar-primary-foreground: oklch(0.12 0.005 250);
-  --sidebar-accent: oklch(0.20 0.005 250);
-  --sidebar-accent-foreground: oklch(0.85 0.01 90);
-  --sidebar-border: oklch(0.25 0.005 250);
-  --sidebar-ring: oklch(0.55 0.06 75);
-  
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+
   /* Unified Motion System */
   --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
@@ -62,9 +60,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-serif: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-mono: ui-monospace, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -115,26 +113,38 @@
   }
   body {
     @apply bg-background text-foreground;
-    cursor: none;
+    cursor: auto;
   }
-  
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  .font-serif {
+    font-weight: 400;
+  }
+
+  main img[src^="/projects/"] {
+    filter: var(--architecture-image-filter);
+  }
+
   /* Hide default cursor on desktop */
   @media (min-width: 768px) {
     body {
-      cursor: none;
+      cursor: auto;
     }
     a, button {
-      cursor: none;
+      cursor: pointer;
     }
   }
-  
+
   /* Unified interaction states */
   a, button, [data-hoverable] {
     transition: opacity var(--motion-duration-fast) var(--motion-ease-out),
                 transform var(--motion-duration-fast) var(--motion-ease-out),
                 color var(--motion-duration-normal) var(--motion-ease-out);
   }
-  
+
   /* Prevent layout shifts */
   img {
     font-size: 0;
@@ -177,17 +187,17 @@
 
 /* Gradient section backgrounds */
 .section-gradient {
-  background: linear-gradient(180deg, 
-    oklch(0.12 0.005 250) 0%, 
-    oklch(0.14 0.005 250) 50%,
-    oklch(0.12 0.005 250) 100%
+  background: linear-gradient(180deg,
+    var(--background) 0%,
+    var(--card) 50%,
+    var(--background) 100%
   );
 }
 
 .section-gradient-alt {
-  background: linear-gradient(180deg, 
-    oklch(0.14 0.005 250) 0%, 
-    oklch(0.16 0.005 250) 50%,
-    oklch(0.14 0.005 250) 100%
+  background: linear-gradient(180deg,
+    var(--card) 0%,
+    var(--secondary) 50%,
+    var(--card) 100%
   );
 }

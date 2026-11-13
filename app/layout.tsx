@@ -1,61 +1,69 @@
-import React from "react"
-import type { Metadata } from 'next'
-import { Inter, Cormorant_Garamond, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
-import { Navigation } from '@/components/navigation'
-import { Footer } from '@/components/footer'
-import { CustomCursor } from '@/components/custom-cursor'
-import { MeshBackground } from '@/components/mesh-background'
-import { NoiseTexture } from '@/components/noise-texture'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import React from "react";
+import type { Metadata } from "next";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { ScrollExperience } from "@/components/scroll-experience";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const _inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const _cormorant = Cormorant_Garamond({ 
-  subsets: ["latin"], 
-  weight: ["300", "400", "500", "600"],
-  variable: '--font-cormorant'
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
+  display: "swap",
 });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: 'Urbexa Projects — Execution-led Construction',
-  description: 'Execution-led construction with clarity, control, and long-term value. Free resources and structured insight for landowners and serious builders.',
+  title: "Urbexa Projects — Execution-led Construction",
+  description:
+    "Execution-led construction with clarity, control, and long-term value. Free resources and structured insight for landowners and serious builders.",
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
       },
       {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
       },
       {
-        url: '/BK-Favicon.ico',
+        url: "/BK-Favicon.ico",
       },
     ],
   },
-
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
-        <MeshBackground />
-        <NoiseTexture />
-        <CustomCursor />
+      <body
+        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
+      >
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <ScrollExperience />
         <Navigation />
-        <main className="relative z-10">{children}</main>
+        <main id="main-content" tabIndex={-1} className="relative z-10">
+          {children}
+        </main>
         <Footer />
-        <SpeedInsights/>
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

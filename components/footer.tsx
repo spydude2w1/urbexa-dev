@@ -1,72 +1,48 @@
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import { ArrowUpRight, ArrowUp } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/20">
-      {/* Gold gradient separator */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{
-          background: "linear-gradient(90deg, transparent 0%, rgba(239, 210, 162, 0.3) 20%, rgba(239, 210, 162, 0.3) 80%, transparent 100%)"
-        }}
-      />
-
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(180deg, oklch(0.12 0.005 250) 0%, oklch(0.10 0.005 250) 100%)"
-        }}
-      />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-20">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-          <div className="space-y-4">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/images/bk-icon.png"
-                  alt="Urbexa Projects Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-serif text-xl tracking-wide text-foreground">
-                Urbexa Projects
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground/70 max-w-sm leading-relaxed">
-              Execution-led construction with clarity, control, and long-term value.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start md:items-end gap-3">
-            <Link
-              href="/contact"
-              className="text-sm text-muted-foreground transition-all duration-500 hover:text-gold"
-              data-hoverable
-            >
-              Contact Urbexa Projects
-            </Link>
-            <Link
-              href="/work"
-              className="text-sm text-muted-foreground/60 transition-all duration-500 hover:text-gold"
-              data-hoverable
-            >
-              View our work
+    <footer className="site-footer">
+      <div className="page-width">
+        <div className="footer-top">
+          <div>
+            <span className="eyebrow">VISION. PRECISION. EXECUTION.</span>
+            <Link href="/contact" className="footer-invitation">
+              Let’s build what’s next.
+              <ArrowUpRight />
             </Link>
           </div>
+          <a
+            href="#main-content"
+            className="back-to-top"
+            aria-label="Back to top"
+          >
+            <ArrowUp size={21} />
+          </a>
         </div>
-
-        {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-border/20">
-          <p className="text-xs text-muted-foreground/40">
-            {new Date().getFullYear()} Urbexa Group. All rights reserved.
+        <div className="footer-main">
+          <Link href="/" className="footer-brand">
+            URBEXA<span>PROJECTS</span>
+          </Link>
+          <p>
+            Execution-led construction.
+            <br />
+            Clarity, control, and long-term value.
           </p>
+          <nav aria-label="Footer navigation">
+            <Link href="/work">Our work</Link>
+            <Link href="/process">Our process</Link>
+            <Link href="/contact">Contact</Link>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} Urbexa Group. All rights reserved.
+          </span>
+          <span>BENGALURU / TAMIL NADU</span>
         </div>
       </div>
     </footer>
-  )
+  );
 }
