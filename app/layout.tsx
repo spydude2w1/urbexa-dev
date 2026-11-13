@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
@@ -8,16 +8,16 @@ import { Footer } from "@/components/footer";
 import { ScrollExperience } from "@/components/scroll-experience";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const instrumentSans = Instrument_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  variable: "--font-inter",
   display: "swap",
 });
-const instrumentSerif = Instrument_Serif({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${instrumentSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
+        className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}
       >
         <a href="#main-content" className="skip-link">
           Skip to content

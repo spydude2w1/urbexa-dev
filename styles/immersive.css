@@ -47,7 +47,7 @@ summary {
 .immersive-home h2,
 .enquiry-intro h1,
 .contact-page h1 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(44px, 4.8vw, 72px);
   font-weight: 400;
   line-height: 1.04;
@@ -232,11 +232,11 @@ summary {
   align-items: center;
   padding: 15px 0;
   border-bottom: 1px solid #ffffff1c;
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 27px;
 }
 .mobile-navigation nav a span {
-  font-family: var(--font-instrument-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 10px;
   color: var(--gold);
 }
@@ -288,7 +288,7 @@ summary {
   letter-spacing: 0.12em;
 }
 .hero-content h1 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(66px, 7.9vw, 120px);
   line-height: 0.91;
   letter-spacing: -0.015em;
@@ -502,7 +502,7 @@ summary {
   color: var(--gold);
 }
 .service-title {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 34px;
   font-weight: 400;
   margin-right: auto;
@@ -515,7 +515,7 @@ summary {
   animation: architectural-enter 0.5s both;
 }
 .service-content h4 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 30px;
   max-width: 250px;
   font-weight: 400;
@@ -635,7 +635,7 @@ summary {
   margin-bottom: 40px;
 }
 .stage-number {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 42px;
   line-height: 1;
   color: var(--gold);
@@ -655,7 +655,7 @@ summary {
   box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 33%, transparent);
 }
 .journey-card h3 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 34px;
   line-height: 1.1;
   margin-bottom: 18px;
@@ -748,7 +748,7 @@ summary {
   padding-top: 28px;
 }
 .project-info h3 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 40px;
   margin-top: 6px;
 }
@@ -829,7 +829,7 @@ summary {
 }
 .enquiry-note > span {
   color: var(--gold);
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 42px;
 }
 .enquiry-note p {
@@ -901,7 +901,7 @@ summary {
 }
 .form-step-panel h3,
 .enquiry-success h3 {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: 34px;
   line-height: 1.1;
   font-weight: 400;
@@ -1222,7 +1222,7 @@ summary {
   display: flex;
   align-items: center;
   gap: 28px;
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(32px, 3.4vw, 48px);
   margin-top: 14px;
 }
